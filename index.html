@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Fast & Foodious</title>
+    <link rel="icon" type="image/x-icon" href="images/icon/flame(o).ico">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='fonts.css'>
+    <script src='script.js'></script>
+    <script src='menu.js'></script>
+</head>
+
+
+<body onload="render()">
+    <div class="head">
+        <div class="logo"><img src="images/icon/flame(w).ico">
+            <h3><b>FastAndFoodious</b>.de</h3>
+        </div>
+        <div class="language">
+            <button onclick="language()"><img class="flag" src="images/icon/germany.png"></button>
+        </div>
+    </div>
+
+    <div class="PageBody">
+
+        <div class="mainpage">
+
+            <img class="mainImage" src="images/pasta.jpg">
+            <div class="restauranteLogo">
+                <img src="images/icon/logoRestaurante.png">
+            </div>
+
+            <div class="restaurant">
+                <div class="name">
+                    <h1>Del MAR</h1>
+                    <button onclick="openInfo()"><img src="images/icon/info.ico"></button>
+                </div>
+
+                <div class="reviews">
+                    <img src="images/icon/star.png">
+                    <img src="images/icon/star.png">
+                    <img src="images/icon/star.png">
+                    <img src="images/icon/star.png">
+                    <img src="images/icon/star.png">
+                </div>
+
+                <div class="flex">
+                    <div class="icon">
+                        <img src="images/icon/clock.ico">
+                        <p>ab 15:00</p>
+                    </div>
+                    <div class="icon">
+                        <img src="images/icon/bicycle.ico">
+                        <p>2,50 €</p>
+                    </div>
+                    <div class="icon">
+                        <img src="images/icon/basket.ico">
+                        <p>Min. 10,00 €</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-grey sticky">
+                <div id="sidebar" class="sidebar content">
+
+                    <button id="searchButton" class="searchButton z-index">
+                        <img onclick="openInput()" src="images/icon/search.ico">
+                    </button>
+
+                    <div class="sidebarMenu">
+                        <a href="#section1">Beliebte Gerichte</a>
+                        <a href="#section2">Vorspeise</a>
+                        <a href="#section3">Salate</a>
+                        <a href="#section4">Pizza</a>
+                        <a href="#section5">Pasta</a>
+                        <a href="#section6">Auflauf</a>
+                        <a href="#section7">Desserts</a>
+                        <a href="#section8">Alkoholfreie Getränke</a>
+                        <a href="#section9">Alkoholische Getränke</a>
+                    </div>
+                </div>
+                <div id="search" class="searchfield d-none">
+                    <input id="input" type="text" placeholder="Suche" onkeyup="search()">
+                    <img class="closeInputbtn" onclick="closeInput()" src="images/icon/close.ico">
+                </div>
+            </div>
+
+            <div class="menucard">
+                <section id="section1">
+                    <div class="bg-grey content hide">
+                        <h3>Beliebte Gerichte</h3>
+                    </div>
+                    <div id="popular" class="content"></div>
+                </section>
+
+                <section id="section2">
+                    <div class="bg-grey content hide">
+                        <h3>Vorspeisen</h3>
+                    </div>
+                    <div id="starter" class="content"></div>
+                </section>
+
+                <section id="section3">
+                    <div class="bg-grey content hide">
+                        <h3>Salate</h3>
+                    </div>
+                    <div id="salad" class="content"></div>
+                </section>
+
+                <section id="section4">
+                    <div class="bg-grey content hide">
+                        <h3>Pizza</h3>
+                    </div>
+                    <div id="pizza" class="content"></div>
+                </section>
+
+                <section id="section5">
+                    <div class="bg-grey content hide">
+                        <h3>Pasta</h3>
+                    </div>
+                    <div id="pasta" class="content"></div>
+                </section>
+
+                <section id="section6">
+                    <div class="bg-grey content hide">
+                        <h3>Pasta al Forno</h3>
+                    </div>
+                    <div id="alforno" class="content"></div>
+                </section>
+
+                <section id="section7">
+                    <div class="bg-grey content hide">
+                        <h3>Desserts</h3>
+                    </div>
+                    <div id="dessert" class="content"></div>
+                </section>
+
+                <section id="section8">
+                    <div class="bg-grey content hide">
+                        <h3>Alkoholfreie Getränke</h3>
+                    </div>
+                    <div id="nonalc" class="content"></div>
+                </section>
+
+                <section id="section9">
+                    <div class="bg-grey content hide">
+                        <h3>Alkoholische Getränke</h3>
+                    </div>
+                    <div id="alc" class="content"></div>
+                </section>
+            </div>
+        </div>
+
+        <div id="basket" class="basket">
+            <div class="basketHeadline">
+                <h3>Warenkorb</h3>
+            </div>
+            <div id="purchase" class="purchase"></div>
+            <div id="bill" class="bill d-none"></div>
+            <div id="startNote" class="startNote d-none">
+                <img src="images/icon/delivery.ico">
+                <p>Wähle leckere Gerichte aus,
+                    die in wenigen Minuten bei dir sein werden</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="info" class="dialog-bg d-none" onclick="closeInfo()">
+        <div class='dialog' onclick="noAction(event)">
+            <div class='dialogHeadline'>
+                <h3>Informationen zum Restaurant</h3>
+                <button onclick='closeInfo()'><img src='images/icon/x-mark.ico'></button>
+            </div>
+            <div class='infoTopic'>
+                <img src='images/icon/clock(b).ico'>
+                <h4>Lieferzeiten</h4>
+            </div>
+
+            <div class="bg-grey contentBox">
+                <div class="contentInfo">
+                    <p>Montag</p>
+                    <p>Ruhetag</p>
+                </div>
+                <div class="contentInfo">
+                    <p>Dienstag</p>
+                    <p>15:00-22:00</p>
+                </div>
+                <div class="contentInfo">
+                    <p>Mittwoch</p>
+                    <p>15:00-22:00</p>
+                </div>
+                <div class="contentInfo">
+                    <p>Donnerstag</p>
+                    <p>15:00-22:00</p>
+                </div>
+                <div class="contentInfo">
+                    <p>Freitag</p>
+                    <p>15:00-22:00</p>
+                </div>
+                <div class="contentInfo">
+                    <p>Samstag</p>
+                    <p>13:00-23:00</p>
+                </div>
+                <div class="contentInfo">
+                    <p>Sonntag</p>
+                    <p>13:00-23:00</p>
+                </div>
+            </div>
+
+            <div class='infoTopic'>
+                <img src='images/icon/bicycle(b).ico'>
+                <h4>Liefergebühren</h4>
+            </div>
+
+            <div class="bg-grey contentBox">
+                <div class="contentInfo">
+                    <p>Mindestbestellwert</p>
+                    <p>10,00 €</p>
+                </div>
+                <div class="contentInfo">
+                    <p>Lieferkosten</p>
+                    <p>2,50 €</p>
+                </div>
+            </div>
+
+            <div class='infoTopic'>
+                <img src='images/icon/clock(b).ico'>
+                <h4>Impressum</h4>
+            </div>
+
+            <div class="bg-grey contentBox">
+                <p>Restaurant del Mar</p>
+                <p>Sonnenseite 1a</p>
+                <p>0815 Diesdasananas</p>
+                <p>Gesetzlicher Vertreter: Oda Schneider</p>
+                <a href="mailto:delmar@info.com">delmar@info.com</a>
+                <p>Unternehmensregister: Diesdasananas</p>
+                <p>Unternehmensregister-Nr.: 90009000</p>
+                <p>MwSt-Nummer: DE123456</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="orderConfirmation" class="dialog-bg d-none" onclick="closeOrderConfirmation()">
+    </div>
+
+    <div class="footer">
+        <div class="flexFooter">
+            <a href="#">AGB</a>
+            <a href="#">Datenschutzerklärung</a>
+            <a href="#">Impressum</a>
+        </div>
+
+        <div class="flexFooter copyright">
+            <img src="images/icon/copyright.ico">
+            <p>2022 FastAndFoodious.de</p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

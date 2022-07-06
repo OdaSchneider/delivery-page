@@ -1,0 +1,779 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Jost', sans-serif;
+}
+
+button {
+    font-family: 'Jost', sans-serif;
+    font-size: 1em;
+    background-color: unset;
+    border: none;
+    cursor: pointer;
+    height: fit-content;
+    width: fit-content;
+    margin: unset;
+    padding: unset;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: unset;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.bg-grey {
+    background-color: #F8F5F2;
+}
+
+.flex {
+    display: flex;
+}
+
+.flexFooter{
+    display: flex;
+}
+
+.active {
+    background-color: #FB6100;
+    color: white;
+}
+
+.active a{
+    color: white;
+}
+
+.sticky{
+    position: sticky;
+    top: 0;
+}
+
+.head {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    height: 80px;
+    background-color: #FB6100;
+    position: relative;
+    z-index: 998;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 16px;
+}
+
+.logo h3 {
+    color: white;
+    margin-left: 8px;
+}
+
+.logo img {
+    width: 32px;
+    height: 32px;
+    margin: 8px;
+}
+
+.language {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+}
+
+.language button {
+    border: none;
+    background-color: #FB6100;
+    border-radius: 100%;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+}
+
+.language img {
+    width: 24px;
+    height: 24px;
+    margin: 8px;
+    border: 2px solid white;
+    border-radius: 100%;
+    background-color: white;
+}
+
+.mainpage{
+    width: 76%;
+    margin-bottom: 50px;
+    min-height: 100vh;
+}
+
+.mainImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    bottom: 40px;
+    object-position: 100% 45%;
+}
+
+.restauranteLogo {
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 215px;
+}
+
+.restauranteLogo img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    background-color: white;
+    border-radius: 100%;
+    box-shadow: 0px 0px 6px 0px rgb(0 0 0 / 20%);
+}
+
+.name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.reviews img {
+    width: 16px;
+    height: 16px;
+}
+
+.restaurant{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.content {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.content h3 {
+    padding: 16px;
+}
+
+.hide{
+    display: block;
+}
+
+section{
+    padding-top: 50px;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid lightgray;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+.menu h4{
+    margin: unset;
+    color: #0A3847;
+}
+
+.menu p{
+    margin: unset;
+    color: #575757;
+}
+
+.dishes{
+    padding: 16px;
+}
+
+.menuButton{
+    width: 30px;
+    height: 30px;
+    border-bottom: 1px solid lightgrey;
+    border-left: 1px solid lightgrey;
+    padding: 5px;
+}
+
+.menu:hover{
+    border-color: blue;
+}
+
+.menuButton:hover{
+    background-color: rgb(238, 238, 255);
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    margin-right: 18px;
+}
+
+.icon img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.icon p {
+    color: #999999;
+    font-size: 14px;
+}
+
+.sidebar {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.z-index {
+    padding: 0 16px 0 0;
+    z-index: 1;
+    background-color: #F8F5F2;
+}
+
+.sidebarMenu {
+    width: fit-content;
+    display: flex;
+    overflow-x: auto;
+    padding: 8px 8px 8px 8px;
+}
+
+.sidebarMenu::-webkit-scrollbar{
+    height: 3px;
+}
+
+.sidebarMenu::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px lightgray; 
+    border-radius: 5px;
+}
+
+.sidebarMenu::-webkit-scrollbar-thumb {
+    background: #575757; 
+    border-radius: 5px;
+}
+
+.sidebarMenu a{
+    text-decoration: none;
+    color: #575757;
+    margin-right: 24px;
+    white-space: nowrap;
+    font-size: 16px;
+    padding: 8px;
+}
+
+.searchButton{
+    display: flex;
+    align-items: center;
+    width: 45px;
+    overflow: hidden;
+}
+
+.searchfield{
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 80px;
+}
+
+.searchfield input{
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    outline: none;
+    margin: 16px 5px 8px 50px;
+    width: 85%;
+}
+
+.searchfield img{
+    margin: 16px 0 8px 0;
+}
+
+.closeInputbtn{
+    padding: 3px !important;
+    opacity: 0.5;
+}
+
+.sidebar img {
+    width: 16px;
+    height: 16px;
+    margin-right: 16px;
+}
+
+.sidebar button {
+    object-position: center;
+}
+
+.basket {
+    width: 23%;
+    height: 100vh;
+    padding: 16px;
+    position: fixed;
+    top: 80px;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background-color: white;
+    box-shadow: 0px 1px 5px 0px #575757;
+    overflow-y: auto;
+    transition: all 125ms ease-in-out;
+}
+
+.basket::-webkit-scrollbar{
+    width: 5px;
+}
+
+.basket::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px lightgray; 
+    border-radius: 3px;
+}
+
+.basket::-webkit-scrollbar-thumb {
+    background: #575757; 
+    border-radius: 3px;
+}
+
+.basketHeadline{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.basket h3{
+    color: #0A3847;
+    text-align: center;
+    border-bottom: 1px solid #979797;
+    padding: 8px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.flexBill b1, b2{
+    font-weight: bold;
+    color: #575757;
+    margin: 16px;
+}
+
+.flexBill p1{
+    color: #575757;
+    margin: 16px;
+}
+
+.flexBill p2{
+    color: #575757;
+    margin: 16px;
+}
+
+.flexBill p1, b1{
+    text-align: left;
+}
+
+.flexBill p2, b2{
+    text-align: right;
+}
+
+.basket img{
+    margin-top: 80px;
+}
+
+.startNote{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.6;
+}
+
+.order{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 16px 0 16px;
+}
+
+.order p{
+    white-space: nowrap;
+}
+
+.quantity{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 0 16px;
+}
+
+.quantity img{
+    margin: unset;
+    width: 8px;
+    height: 8px;
+}
+
+.quantity p {
+    font-size: 14px;
+    margin: 0 16px 0 16px;
+}
+
+.quantity button{
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    width: 16px;
+    height: 16px;
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+}
+
+.bill{
+    margin-top: 50px;
+    border-top: 1px solid lightgray;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flexBill{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.orderButton{
+    background-color:  rgb(0, 0, 206);
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    color: white;
+    padding: 8px;
+    margin: 16px;
+}
+
+.orderButton:hover{
+    background-color: blue;
+}
+
+.dialog-bg {
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 999;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.orderDialog{
+    background-color: white;
+    width: 50%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dialog {
+    width: 50%;
+    height: 70%;
+    background-color: white;
+    overflow-y: auto;
+    position: relative;
+}
+
+.dialogHeadline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px 10px 20px;
+    border-bottom: 1px solid rgb(189, 189, 189);
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+.dialog img{
+    width: 20px;
+    height: 20px;
+}
+
+.infoTopic{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 20px 0px 20px;
+}
+
+.infoTopic h4{
+    margin-left: 16px;
+}
+
+.contentBox{
+    margin: 10px 20px 10px 20px;
+    padding: 20px 10px 20px 10px;
+}
+
+.contentBox p, a{
+    margin: unset;
+    font-size: 14px;
+}
+
+.contentInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px;
+}
+
+.contentInfo p{
+    margin: unset;
+    font-size: 14px;
+}
+
+.footer{
+    background-color: #0A3847;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    position: relative;
+    bottom: 0;
+    z-index: 998;
+}
+
+.footer a{
+    text-decoration: none;
+    color: white;
+    margin: 10px;
+}
+
+.footer a:hover{
+    text-decoration: underline;
+}
+
+.copyright img{
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
+    margin-right: 8px;
+}
+
+.copyright{
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+
+
+@media (max-width: 1024px) {
+    .flexBill{
+        flex-direction: column;
+        margin: 16px;
+        margin-bottom: 32px;
+    }
+
+    .flexBill p1{
+        margin: unset;
+    }
+    .flexBill b1{
+        margin: unset;
+    }
+    .flexBill p2{
+        margin: unset;
+    }
+    .flexBill b2{
+        margin: unset;
+    }
+
+    .order{
+        flex-direction: column;
+        margin: 16px;
+        align-items: unset;
+    }
+
+    .order h4{
+        margin: unset;
+        text-align: center;
+    }
+   
+    .order p{
+        margin: unset;
+        text-align: center;
+        margin-top: 8px;
+    }
+
+    .quantity{
+        justify-content: center;
+        margin-bottom: 32px;
+    }
+    
+    .searchfield input{
+        width: 80%;
+    }
+}
+
+@media (max-width: 840px){
+    .basket{
+        width: 30%;
+    }
+
+    .mainpage{
+        width: 70%;
+    }
+
+    .restauranteLogo{
+        width: 70%;
+        top: 230px;
+    }
+
+    .restauranteLogo img{
+        width: 100px;
+        height: 100px;
+    }
+
+    .searchfield input{
+        width: 75%;
+    }
+
+}
+
+@media (max-width: 700px){
+    body{
+        font-size: 0.9em;
+    }
+
+    .searchfield input{
+        width: 70%;
+    }
+
+    .restauranteLogo{
+        top: 240px;
+    }
+
+    .restauranteLogo img{
+        width: 80px;
+        height: 80px;
+    }
+    
+    .dialog{
+        width: 70%;
+        height: 85%;
+    }
+
+}
+
+@media (max-width: 610px){
+    .flex{
+        flex-wrap: wrap;
+    }
+
+    .restaurant{
+        margin-top: 50px;
+    }
+
+    .searchfield input{
+        width: 65%;
+    }
+}
+
+@media (max-width: 530px){
+    .flexBill p1, b1, p2, b2{
+        text-align: center !important;
+    }
+
+    .searchfield input{
+        width: 50%;
+    }
+}
+
+@media (max-width: 470px){
+    .dialog{
+        width: 90%;
+        height: 90%;
+    }
+
+    .name{
+        flex-direction: column;
+        margin-bottom: 16px;
+    }
+
+    .reviews{
+        display: flex;
+        justify-content: center;
+    }
+
+    .flex{
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .quantity{
+        margin: 8px 16px;
+    }
+
+    .sidebarMenu a{
+        font-size: 1.1em;
+    }
+
+    .mainpage{
+        width: 100%;
+    }
+
+    .restauranteLogo{
+        width: 100%;
+    }
+
+    .basket{
+        height: 50px;
+        width: 100%;
+        border-radius: 3px;
+        transition: all 250ms ease-in-out;
+        padding: unset;
+    }
+
+    .basket h3{
+        margin-top: unset;
+    }
+
+    .basket:hover{
+        height: 300px;
+        transition: all 250ms ease-in-out;
+    }
+
+    .flexBill{
+        margin: unset;
+        margin-bottom: 32px;
+    }
+
+    .sticky{
+        top: 50px;
+    }
+
+    .order{
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .quantity{
+        justify-content: start;
+    }
+
+    .orderDialog{
+        padding: 8px;
+        width: 70%;
+        height: 75%;
+    }
+}
